@@ -28,7 +28,7 @@
             </p>
 
             <div class="mt-6">
-                <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
+                <x-input-label for="password" class="sr-only"><span>{{ __('Password') }} <span class="required">*</span></span></x-input-label>
 
                 <x-text-input
                     id="password"
@@ -36,6 +36,8 @@
                     type="password"
                     class="mt-1 block w-3/4"
                     placeholder="{{ __('Password') }}"
+                    autofocus
+                    required
                 />
 
                 <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
