@@ -5,14 +5,14 @@
 
     <!-- Page Header -->
     <div style="margin-bottom:1.5rem;">
-        <h1 class="page-title"><i class="fas fa-chart-pie" style="color:#4f46e5;margin-right:8px;"></i>Dashboard Saya</h1>
+        <h1 class="page-title"><i class="fas fa-chart-pie" style="color:#2563eb;margin-right:8px;"></i>Dashboard Saya</h1>
         <p class="page-subtitle">Selamat datang, {{ auth()->user()->name }}! Berikut ringkasan aktivitas peminjaman Anda.</p>
     </div>
 
     <!-- Stat Cards -->
     <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
         <div class="stat-card">
-            <div class="stat-icon indigo"><i class="fas fa-list-check"></i></div>
+            <div class="stat-icon blue"><i class="fas fa-list-check"></i></div>
             <div class="stat-info">
                 <p>Total Peminjaman</p>
                 <h3>{{ number_format($stats['total_loans'], 0, ',', '.') }}</h3>
@@ -49,7 +49,7 @@
         <!-- Riwayat Peminjaman -->
         <div class="card">
             <div class="card-header">
-                <h2><i class="fas fa-clock-rotate-left" style="color:#4f46e5;margin-right:6px;"></i>Peminjaman Terbaru Saya</h2>
+                <h2><i class="fas fa-clock-rotate-left" style="color:#2563eb;margin-right:6px;"></i>Peminjaman Terbaru Saya</h2>
                 <a href="{{ route('loans.index') }}" class="btn btn-secondary btn-sm">Lihat Semua</a>
             </div>
             <div class="table-wrapper">

@@ -5,7 +5,7 @@
 
     <div style="margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
         <div>
-            <h1 class="page-title"><i class="fas fa-users" style="color:#4f46e5;margin-right:8px;"></i>Manajemen User</h1>
+            <h1 class="page-title"><i class="fas fa-users" style="color:#2563eb;margin-right:8px;"></i>Manajemen User</h1>
             <p class="page-subtitle">Kelola akun pengguna dan hak akses sistem.</p>
         </div>
         <a href="{{ route('users.create') }}" class="btn btn-primary" id="btn-tambah-user">
@@ -67,7 +67,7 @@
                             <td style="color:#94a3b8;">{{ $loop->iteration + ($users->currentPage() - 1) * $users->perPage() }}</td>
                             <td>
                                 <div style="display:flex;align-items:center;gap:0.65rem;">
-                                    <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#818cf8,#6366f1);display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:white;flex-shrink:0;">
+                                    <div style="width:34px;height:34px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#1d4ed8;flex-shrink:0;">
                                         {{ strtoupper(substr($user->name, 0, 1)) }}
                                     </div>
                                     <span style="font-weight:500;color:#1e293b;">{{ $user->name }}</span>
@@ -79,7 +79,7 @@
                             <td style="color:#64748b;">{{ $user->email }}</td>
                             <td>
                                 @if($user->role === 'admin')
-                                    <span class="badge badge-violet"><i class="fas fa-shield-halved"></i> Admin</span>
+                                    <span class="badge badge-info"><i class="fas fa-shield-halved"></i> Admin</span>
                                 @else
                                     <span class="badge badge-secondary"><i class="fas fa-user"></i> User</span>
                                 @endif

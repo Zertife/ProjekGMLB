@@ -5,7 +5,7 @@
 
     <div style="margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
         <div>
-            <h1 class="page-title"><i class="fas fa-boxes-stacked" style="color:#4f46e5;margin-right:8px;"></i>Daftar Barang Inventaris</h1>
+            <h1 class="page-title"><i class="fas fa-boxes-stacked" style="color:#2563eb;margin-right:8px;"></i>Daftar Barang Inventaris</h1>
             <p class="page-subtitle">Kelola dan pantau seluruh ketersediaan barang inventaris sekolah.</p>
         </div>
         @if(auth()->user()->isAdmin())
@@ -86,7 +86,7 @@
                         <tr>
                             <td style="color:#94a3b8;">{{ $loop->iteration + ($items->currentPage() - 1) * $items->perPage() }}</td>
                             <td>
-                                <code style="background:#f1f5f9;color:#4f46e5;font-weight:600;padding:2px 6px;border-radius:4px;font-size:0.8rem;">
+                                <code style="background:#f1f5f9;color:#2563eb;font-weight:600;padding:2px 6px;border-radius:4px;font-size:0.8rem;">
                                     {{ $item->code }}
                                 </code>
                             </td>
@@ -129,10 +129,14 @@
                                         </form>
                                     </div>
                                 @else
-                                    @if($item->stock > 0)
+                                    @if($item->stock > 0 && $item->condition !== 'rusak berat')
                                         <a href="{{ route('loans.create', ['item_id' => $item->id]) }}" class="btn btn-primary btn-sm">
                                             <i class="fas fa-handshake"></i> Pinjam
                                         </a>
+                                    @elseif($item->condition === 'rusak berat')
+                                        <button class="btn btn-secondary btn-sm" disabled>
+                                            Rusak Berat
+                                        </button>
                                     @else
                                         <button class="btn btn-secondary btn-sm" disabled>
                                             Stok Habis

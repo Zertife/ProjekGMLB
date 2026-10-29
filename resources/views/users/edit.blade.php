@@ -6,7 +6,7 @@
     </x-slot>
 
     <div style="margin-bottom:1.5rem;">
-        <h1 class="page-title"><i class="fas fa-user-pen" style="color:#4f46e5;margin-right:8px;"></i>Edit User</h1>
+        <h1 class="page-title"><i class="fas fa-user-pen" style="color:#2563eb;margin-right:8px;"></i>Edit User</h1>
         <p class="page-subtitle">Perbarui informasi akun pengguna: <strong>{{ $user->name }}</strong></p>
     </div>
 

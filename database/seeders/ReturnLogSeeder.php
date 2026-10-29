@@ -41,6 +41,10 @@ class ReturnLogSeeder extends Seeder
                 'condition_on_return' => $returnData[$index]['condition_on_return'],
                 'notes'              => $returnData[$index]['notes'],
             ]);
+
+            if ($returnData[$index]['condition_on_return'] !== 'baik') {
+                $loan->item?->decrement('stock', $loan->quantity);
+            }
         }
     }
 }

@@ -363,4 +363,35 @@ class InventorySystemTest extends TestCase
         $this->assertSame(5, $this->item->fresh()->stock);
         $this->assertDatabaseCount('loans', 0);
     }
+
+    public function test_severely_damaged_items_cannot_be_borrowed()
+    {
+        $damagedItem = Item::create([
+            'category_id' => $this->category->id,
+            'name' => 'Kursi rusak',
+            'code' => 'CHR-99',
+            'stock' => 2,
+            'condition' => 'rusak berat',
+        ]);
+
+        $this->actingAs($this->user)
+            ->get('/loans/create')
+            ->assertOk()
+            ->assertDontSee('CHR-99');
+
+        $this->actingAs($this->user)
+            ->get('/items')
+            ->assertOk()
+            ->assertDontSee(route('loans.create', ['item_id' => $damagedItem->id]));
+
+        $this->actingAs($this->user)->post('/loans', [
+            'item_id' => $damagedItem->id,
+            'quantity' => 1,
+            'loan_date' => now()->toDateString(),
+            'due_date' => now()->addDays(3)->toDateString(),
+        ])->assertSessionHasErrors('item_id');
+
+        $this->assertSame(2, $damagedItem->fresh()->stock);
+        $this->assertDatabaseCount('loans', 0);
+    }
 }

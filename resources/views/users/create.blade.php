@@ -6,7 +6,7 @@
     </x-slot>
 
     <div style="margin-bottom:1.5rem;">
-        <h1 class="page-title"><i class="fas fa-user-plus" style="color:#4f46e5;margin-right:8px;"></i>Tambah User Baru</h1>
+        <h1 class="page-title"><i class="fas fa-user-plus" style="color:#2563eb;margin-right:8px;"></i>Tambah User Baru</h1>
         <p class="page-subtitle">Buat akun pengguna baru untuk sistem inventaris.</p>
     </div>
 

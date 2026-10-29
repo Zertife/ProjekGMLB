@@ -5,7 +5,7 @@
 
     <div style="margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
         <div>
-            <h1 class="page-title"><i class="fas fa-tags" style="color:#4f46e5;margin-right:8px;"></i>Manajemen Kategori</h1>
+            <h1 class="page-title"><i class="fas fa-tags" style="color:#2563eb;margin-right:8px;"></i>Manajemen Kategori</h1>
             <p class="page-subtitle">Kelola kategori barang inventaris sekolah.</p>
         </div>
         <a href="{{ route('categories.create') }}" class="btn btn-primary" id="btn-tambah-kategori">
@@ -60,7 +60,7 @@
                             <td style="color:#94a3b8;">{{ $loop->iteration + ($categories->currentPage() - 1) * $categories->perPage() }}</td>
                             <td>
                                 <div style="display:flex;align-items:center;gap:0.65rem;">
-                                    <div style="width:32px;height:32px;border-radius:8px;background:#eef2ff;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:#4f46e5;">
+                                    <div style="width:32px;height:32px;border-radius:8px;background:#eff6ff;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:#2563eb;">
                                         <i class="fas fa-tag"></i>
                                     </div>
                                     <span style="font-weight:500;color:#1e293b;">{{ $category->name }}</span>

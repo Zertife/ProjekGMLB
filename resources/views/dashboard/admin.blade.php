@@ -6,7 +6,7 @@
     <!-- Page Header -->
     <div style="margin-bottom:1.5rem; display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
         <div>
-            <h1 class="page-title"><i class="fas fa-chart-pie" style="color:#4f46e5;margin-right:8px;"></i>Dashboard Admin</h1>
+            <h1 class="page-title"><i class="fas fa-chart-pie" style="color:#2563eb;margin-right:8px;"></i>Dashboard Admin</h1>
             <p class="page-subtitle">Selamat datang, {{ auth()->user()->name }}! Berikut ringkasan sistem inventaris.</p>
         </div>
     </div>
@@ -14,7 +14,7 @@
     <!-- Stat Cards -->
     <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
         <div class="stat-card">
-            <div class="stat-icon indigo"><i class="fas fa-users"></i></div>
+            <div class="stat-icon blue"><i class="fas fa-users"></i></div>
             <div class="stat-info">
                 <p>Total User</p>
                 <h3>{{ number_format($stats['total_users'], 0, ',', '.') }}</h3>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="stat-card">
-            <div class="stat-icon violet"><i class="fas fa-boxes-stacked"></i></div>
+            <div class="stat-icon blue"><i class="fas fa-boxes-stacked"></i></div>
             <div class="stat-info">
                 <p>Total Barang</p>
                 <h3>{{ number_format($stats['total_items'], 0, ',', '.') }}</h3>
@@ -119,7 +119,7 @@
         <!-- Activity Log -->
         <div class="card">
             <div class="card-header">
-                <h2><i class="fas fa-scroll" style="color:#7c3aed;margin-right:6px;"></i>Aktivitas Terbaru</h2>
+                <h2><i class="fas fa-scroll" style="color:#2563eb;margin-right:6px;"></i>Aktivitas Terbaru</h2>
                 <a href="{{ route('activity-logs.index') }}" class="btn btn-secondary btn-sm">Lihat Semua</a>
             </div>
             <div style="padding:0;">
@@ -131,7 +131,7 @@
                 @else
                     @foreach($recentActivities as $activity)
                     <div style="padding:0.85rem 1.25rem; border-bottom:1px solid #f1f5f9; display:flex; gap:0.75rem; align-items:flex-start;">
-                        <div style="width:32px;height:32px;border-radius:8px;background:#ede9fe;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:#7c3aed;flex-shrink:0;">
+                        <div style="width:32px;height:32px;border-radius:8px;background:#eff6ff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:#2563eb;flex-shrink:0;">
                             <i class="fas fa-bolt"></i>
                         </div>
                         <div style="flex:1;min-width:0;">

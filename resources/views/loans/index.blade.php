@@ -5,7 +5,7 @@
 
     <div style="margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
         <div>
-            <h1 class="page-title"><i class="fas fa-handshake" style="color:#4f46e5;margin-right:8px;"></i>{{ auth()->user()->isAdmin() ? 'Manajemen Peminjaman' : 'Riwayat Peminjaman Saya' }}</h1>
+            <h1 class="page-title"><i class="fas fa-handshake" style="color:#2563eb;margin-right:8px;"></i>{{ auth()->user()->isAdmin() ? 'Manajemen Peminjaman' : 'Riwayat Peminjaman Saya' }}</h1>
             <p class="page-subtitle">{{ auth()->user()->isAdmin() ? 'Pantau dan kelola seluruh transaksi peminjaman barang inventaris.' : 'Daftar riwayat dan status peminjaman barang yang Anda ajukan.' }}</p>
         </div>
         <a href="{{ route('loans.create') }}" class="btn btn-primary" id="btn-tambah-peminjaman">
@@ -90,7 +90,7 @@
                             @endif
                             <td>
                                 <div style="font-weight:600;color:#1e293b;">{{ $loan->item->name }}</div>
-                                <code style="font-size:0.75rem;color:#6366f1;">{{ $loan->item->code }}</code>
+                                <code style="font-size:0.75rem;color:#2563eb;">{{ $loan->item->code }}</code>
                             </td>
                             <td>
                                 <span class="badge badge-secondary">{{ number_format($loan->quantity, 0, ',', '.') }} unit</span>

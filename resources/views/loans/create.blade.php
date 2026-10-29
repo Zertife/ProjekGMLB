@@ -6,7 +6,7 @@
     </x-slot>
 
     <div style="margin-bottom:1.5rem;">
-        <h1 class="page-title"><i class="fas fa-handshake" style="color:#4f46e5;margin-right:8px;"></i>{{ auth()->user()->isAdmin() ? 'Catat Peminjaman Barang' : 'Form Pengajuan Peminjaman' }}</h1>
+        <h1 class="page-title"><i class="fas fa-handshake" style="color:#2563eb;margin-right:8px;"></i>{{ auth()->user()->isAdmin() ? 'Catat Peminjaman Barang' : 'Form Pengajuan Peminjaman' }}</h1>
         <p class="page-subtitle">{{ auth()->user()->isAdmin() ? 'Catat transaksi peminjaman langsung untuk staf/guru/siswa.' : 'Isi formulir untuk meminjam fasilitas atau peralatan sekolah.' }}</p>
     </div>
 

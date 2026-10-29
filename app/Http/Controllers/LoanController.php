@@ -73,7 +73,10 @@ class LoanController extends Controller
     public function create(CreateLoanRequest $request)
     {
         $user = Auth::user();
-        $items = Item::where('stock', '>', 0)->orderBy('name')->get();
+        $items = Item::where('stock', '>', 0)
+            ->where('condition', '!=', 'rusak berat')
+            ->orderBy('name')
+            ->get();
         $users = $user->isAdmin() ? User::where('role', 'user')->orderBy('name')->get() : collect();
         $selectedItemId = $request->query('item_id');
 
@@ -98,6 +101,12 @@ class LoanController extends Controller
             if ($item->stock < $validated['quantity']) {
                 throw ValidationException::withMessages([
                     'quantity' => "Stok barang \"{$item->name}\" tidak mencukupi. Sisa stok: ".number_format($item->stock, 0, ',', '.')." unit.",
+                ]);
+            }
+
+            if ($item->condition === 'rusak berat') {
+                throw ValidationException::withMessages([
+                    'item_id' => "Barang \"{$item->name}\" tidak dapat dipinjam karena kondisinya rusak berat.",
                 ]);
             }
 

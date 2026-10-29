@@ -14,8 +14,8 @@ class ActivityLogSeeder extends Seeder
     public function run(): void
     {
         $admin = User::where('role', 'admin')->first();
-        $budi  = User::where('email', 'budi@inventaris.sch.id')->first();
-        $siti  = User::where('email', 'siti@inventaris.sch.id')->first();
+        $user1 = User::where('email', 'user1@email.com')->firstOrFail();
+        $user2 = User::where('email', 'user2@email.com')->firstOrFail();
 
         $logs = [
             [
@@ -39,24 +39,24 @@ class ActivityLogSeeder extends Seeder
                 'description' => 'Admin menambahkan barang baru: Proyektor Epson (ELK-001).',
             ],
             [
-                'user_id'     => $budi->id,
+                'user_id'     => $user1->id,
                 'action'      => 'create_loan',
-                'description' => 'Budi Santoso mengajukan peminjaman Mikroskop sebanyak 2 unit.',
+                'description' => 'User 1 mengajukan peminjaman Mikroskop sebanyak 2 unit.',
             ],
             [
-                'user_id'     => $siti->id,
+                'user_id'     => $user2->id,
                 'action'      => 'create_loan',
-                'description' => 'Siti Rahayu mengajukan peminjaman Proyektor Epson sebanyak 1 unit.',
+                'description' => 'User 2 mengajukan peminjaman Proyektor Epson sebanyak 1 unit.',
             ],
             [
                 'user_id'     => $admin->id,
                 'action'      => 'verify_loan',
-                'description' => 'Admin memverifikasi peminjaman Mikroskop oleh Budi Santoso.',
+                'description' => 'Admin memverifikasi peminjaman Mikroskop oleh User 1.',
             ],
             [
                 'user_id'     => $admin->id,
                 'action'      => 'verify_return',
-                'description' => 'Admin memverifikasi pengembalian Proyektor Epson oleh Siti Rahayu.',
+                'description' => 'Admin memverifikasi pengembalian Proyektor Epson oleh User 2.',
             ],
         ];
 

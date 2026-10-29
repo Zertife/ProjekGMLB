@@ -6,7 +6,7 @@
     </x-slot>
 
     <div style="margin-bottom:1.5rem;">
-        <h1 class="page-title"><i class="fas fa-boxes-packing" style="color:#4f46e5;margin-right:8px;"></i>Tambah Barang Baru</h1>
+        <h1 class="page-title"><i class="fas fa-boxes-packing" style="color:#2563eb;margin-right:8px;"></i>Tambah Barang Baru</h1>
         <p class="page-subtitle">Daftarkan item barang baru ke dalam inventaris sekolah.</p>
     </div>
 

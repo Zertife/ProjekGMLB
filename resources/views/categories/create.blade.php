@@ -6,7 +6,7 @@
     </x-slot>
 
     <div style="margin-bottom:1.5rem;">
-        <h1 class="page-title"><i class="fas fa-tag" style="color:#4f46e5;margin-right:8px;"></i>Tambah Kategori</h1>
+        <h1 class="page-title"><i class="fas fa-tag" style="color:#2563eb;margin-right:8px;"></i>Tambah Kategori</h1>
         <p class="page-subtitle">Tambahkan kategori barang baru ke sistem.</p>
     </div>
 
